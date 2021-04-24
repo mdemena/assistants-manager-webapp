@@ -3,12 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import 'semantic-ui-css/semantic.min.css'
+import { BrowserRouter } from 'react-router-dom';
+import PrimeReact from 'primereact/api';
+import { locale } from 'primereact/api';
+
+PrimeReact.ripple = true;
+locale('es');
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+	<BrowserRouter>
+		<App />
+	</BrowserRouter>,
   document.getElementById('App')
 );
 
