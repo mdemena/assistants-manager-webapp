@@ -37,9 +37,6 @@ export class UserService {
 			.then((response) => response.status)
 			.catch((error) => error.status);
 	};
-	events = (id) => {
-		return this.service.get(`/events/${id}`).then((response) => response.data);
-	};
 }
 const userService = new UserService();
 
