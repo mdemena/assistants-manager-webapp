@@ -1,24 +1,17 @@
-import React, { useReducer, useEffect } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import React from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+// core components
+import Admin from "./layouts/Admin.js";
+import RTL from "./layouts/RTL.js";
 
 function App() {
   return (
-    <div className="p-grid">
-      <div className="p-col"></div>
-      <div className="p-col">
-        <Switch>
-          <Route exact path="/">
-              <div className="p-grid">
-                <div className="p-col"></div>
-                <div className="p-col"></div>
-              </div>
-          </Route>
-          <Route exact path="/assistance/:id">
-          </Route>
-        </Switch>
-      </div>
-    </div>
+    <Switch>
+      <Route path="/admin" component={Admin} />
+      <Route path="/rtl" component={RTL} />
+      <Redirect from="/" to="/admin/dashboard" />
+    </Switch>
   );
 }
 

@@ -15,3 +15,5 @@ function assistantReducer(assistants = [], action){
             return assistants;
     }
 }
+
+export default assistantReducer;
